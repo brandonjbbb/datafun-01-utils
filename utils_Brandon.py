@@ -1,28 +1,7 @@
 '''
-ITERATION 4
 
 My First Python Project
 
-This module provides a simple, reusable foundation for my analytics projects. 
-When we work hard to write useful code, we want it to be reusable.
-A good byline could be used in every Python analytics project we do.
-
-Process:
-
-We don't write code from top to bottom; instead, we often write it from the outside in.
-Here's what a first draft of my utils_case.py might look like:
-
-1. I start with this docstring at the very beginning.
-   I use it to clarify the purpose of my Python file and organize my thoughts.
-   
-2. I'll declare a global variable for my byline string and just set it to some simple text.
-
-3. I'll declare a main() function for my module. When I run this script, I can use main() to test my byline.
-
-4. I'll add the boilerplate conditional execution code so I only run the main() function when 
-   this script is executed directly (but not when I import it into another file).
-
-I'll test it in an online interpreter to ensure this version runs correctly before continuing.
 '''
 
 # Import the statistics module to calculate mean and standard deviation
@@ -70,7 +49,7 @@ stdev_recent_score = statistics.stdev(recent_scores)  # Standard deviation of re
 # Update the byline to include additional information and statistics.
 #####################################
 
-# Multiline f-string for the byline that includes all relevant information
+# Multiline f-string for the byline that includes all relevant information and key statistics
 byline: str = f"""
 
 --------------------------
@@ -80,12 +59,14 @@ My First Python Project
 Is Privately Held: {is_privately_held}
 Number of Employees: {number_of_employees}
 Technologies Used: {', '.join(technologies_used)}
-Client Satisfaction Scores: {client_satisfaction_scores}
+
+Client Satisfaction Scores:
   - Min Client Score: {min_client_score}
   - Max Client Score: {max_client_score}
   - Mean Client Score: {mean_client_score:.2f}
   - Client Score Standard Deviation: {stdev_client_score:.2f}
-Recent Scores: {recent_scores}
+
+Recent Performance Scores:
   - Min Recent Score: {min_recent_score}
   - Max Recent Score: {max_recent_score}
   - Mean Recent Score: {mean_recent_score:.2f}
