@@ -1,4 +1,5 @@
-''' ITERATION 1
+'''
+ITERATION 1
 
 My First Python Project
 
@@ -25,29 +26,55 @@ I'll test it in an online interpreter to ensure this version runs correctly befo
 '''
 
 #####################################
-# Declare a global variable named byline.
+# Declare global variables - keep byline at the end
+# We will use this information in a smarter byline
+######################################
+
+# Boolean variable to indicate if the company is privately held
+is_privately_held: bool = True
+
+# Integer variable for the number of employees
+number_of_employees: int = 50
+
+# List of strings representing the technologies used
+technologies_used: list = ["Python", "Pandas", "NumPy", "SQL"]
+
+# List of floats representing the recent scores
+recent_scores: list = [92.22, 99.2, 95.3, 91.2]
+
+#####################################
+# Update the byline to include additional information.
 #####################################
 
-byline: str = 'I Love Data Analytics'
+# Multiline f-string for the byline that includes all relevant information
+byline: str = f"""
+--------------------------
+My First Python Project
+--------------------------
+
+Is Privately Held: {is_privately_held}
+Number of Employees: {number_of_employees}
+Technologies Used: {', '.join(technologies_used)}
+Recent Scores: {recent_scores}
+"""
 
 #####################################
 # Define the get_byline() Function
 #####################################
 
 def get_byline() -> str:
-   '''Return a byline for my analytics projects. '''
-   return byline
-   
+    '''Return a byline for my analytics projects.'''
+    return byline
+
 #####################################
 # Define a main() function for this module.
 #####################################
 
-# The main function now calls get_byline () to retrieve the byline.
-
+# The main function now calls get_byline() to retrieve the byline.
 
 def main() -> None:
     '''Print the byline to the console when this function is called.'''
-    print(byline)
+    print(get_byline())
 
 #####################################
 # Conditional Execution - Only call main() when executing this module as a script.
